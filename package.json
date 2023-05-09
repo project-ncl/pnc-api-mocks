@@ -1,0 +1,16 @@
+{
+  "name": "pnc-api-mocks",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "json-server": "^0.17.3",
+    "nodemon": "^2.0.22"
+  },
+  "scripts": {
+    "start": "nodemon --watch mocks --exec 'json-server --watch db.js --routes routes.json --port 8020'"
+  },
+  "engines": {
+    "node": "^18.12.0",
+    "npm": "^9.1.0"
+  }
+}
