@@ -1,0 +1,13 @@
+{
+  "/product-milestones/:id/statistics": "/product-milestone-statistics/100",
+  "/product-versions/:id/statistics": "/product-version-statistics/100",
+  "/product-versions/:id/artifact-quality-statistics\\?pageIndex=:id2&pageSize=:id3": "/product-version-artifact-quality-statistics/100?_page=:id2&_limit=:id3",
+  "/product-versions/:id/repository-type-statistics\\?pageIndex=:id2&pageSize=:id3": "/product-version-repository-type-statistics/100?_page=:id2&_limit=:id3",
+  "/product-milestones/:id/interconnection-graph": "/product-milestone-interconnection-graph/100",
+  "/product-milestone-shared-delivered-artifacts\\?milestone1=:id1&milestone2=:id2&pageIndex=:id3&sort=:id4&pageSize=:id5": "/product-milestone-shared-delivered-artifacts/100",
+  "/product-milestone-shared-delivered-artifacts\\?pageIndex=:id1&sort=:id2&pageSize=:id3&milestone1=:id4&milestone2=:id5": "/product-milestone-shared-delivered-artifacts/100",
+  "/builds/:id/artifact-dependency-graph": "/build-artifact-dependency-graph/100",
+  "/build-artifact-dependencies\\?dependentBuild=:id1&dependencyBuild=:id2&pageIndex=:id3&sort=:id4&pageSize=:id5": "/product-milestone-shared-delivered-artifacts/100",
+  "/build-artifact-dependencies\\?pageIndex=:id1&sort=:id2&pageSize=:id3&dependentBuild=:id4&dependencyBuild=:id5": "/product-milestone-shared-delivered-artifacts/100",
+  "/product-milestone-comparison": "/product-milestone-comparison/100"
+}
