@@ -1,0 +1,54 @@
+# https://docs.github.com/en/actions/guides/building-and-testing-nodejs
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: "00 03 * * *"
+    - cron: "00 11 * * *"
+
+jobs:
+  check-package-lock:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: node --version && npm --version
+      - run: npm install -g npm@^9.1.0
+      - run: npm --version
+      - run: npm install
+      - name: Fail if npm install changed package-lock.json
+        run: git diff --exit-code package-lock.json
+
+  clean-install:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: node --version && npm --version
+      - run: npm install -g npm@^9.1.0
+      - run: npm --version
+      - run: ls
+      - run: rm -v package-lock.json
+      - run: ls
+      - run: npm install
