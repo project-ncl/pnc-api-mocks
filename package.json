@@ -10,7 +10,7 @@
     "start": "nodemon --watch mocks --exec 'json-server --watch db.js --host 0.0.0.0 --routes routes.json --port 8020'"
   },
   "engines": {
-    "node": "^20.10.0",
-    "npm": "^10.2.5"
+    "node": "^22.13.0",
+    "npm": "^11.0.0"
   }
 }
