@@ -17,7 +17,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20.x]
+        node-version: [22.x]
 
     steps:
       - uses: actions/checkout@v4
@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: node --version && npm --version
-      - run: npm install -g npm@^10.2.5
+      - run: npm install -g npm@^11.0.0
       - run: npm --version
       - run: npm install
       - name: Fail if npm install changed package-lock.json
@@ -37,7 +37,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20.x]
+        node-version: [22.x]
 
     steps:
       - uses: actions/checkout@v4
@@ -46,7 +46,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: node --version && npm --version
-      - run: npm install -g npm@^10.2.5
+      - run: npm install -g npm@^11.0.0
       - run: npm --version
       - run: ls
       - run: rm -v package-lock.json
